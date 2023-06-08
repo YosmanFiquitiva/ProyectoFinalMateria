@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LevelMaxGallery{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+    {{ encore_entry_link_tags('new') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('new') }}
+{% endblock %}
+
+{% block body %}
+<main class="galeria-new">
+    <form id="form" action="{{path('app_galeriaNew')}}" method="POST" enctype="multipart/form-data">
+        <div class="tittle-accion">
+            <p>SUBIR PUBLICACIONES</p>
+        </div>
+        <div id="image" class="imagenPreview">
+            <div class="input-group cargar">
+                <input type="file" class="form-control" id="cargaArchivo" name="file" accept="image/*" required>
+            </div>
+        </div>
+        <div class="tittle-image">
+            <input type="text" placeholder="Escriba un nombre para la publicación" name="tittle" required>
+        </div>
+        <div class="publicar">
+            <button class="submit" type="submit" form="form">PUBLICAR</button>
+        </div>
+    </form>
+</main>
+{% endblock %}
+

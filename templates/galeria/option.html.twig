@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LevelMaxGallery{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+    {{ encore_entry_link_tags('option') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('delete') }}
+{% endblock %}
+
+
+{% block body %}
+<main class="galeria-new">
+    <divc class="sect">
+        <div class="tittle-accion">
+            <p>PUBLICACION</p>
+        </div>
+        <div id="image" class="imagenPreview" style="background-image: url({{asset('uploads/'~file.imagen)}})">
+            <div class="input-group options">
+                <h1 class="title">
+                    {{file.titulo}}
+                </h1>
+            </div>
+        </div>
+        <div class="publicar">
+            <a href="{{path('app_galeriaEdit', { 'id': file.id })}}">
+                <button class="editar" type="btn">EDITAR PUBLICACION</button>
+            </a>
+            <button id="eliminar" class="eliminar" type="btn" data="{{file.id}}">ELIMINAR PUBLICACION</button>
+        </div>
+    </div>
+</main>
+{% endblock %}

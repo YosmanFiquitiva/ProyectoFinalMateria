@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign In!{% endblock %}
+
+ {% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('login') }}
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+<div class="ingreso">
+    <section class="login">
+        <div class="logo">
+            <img src="{{ asset('images/logo.png')}}" alt="" srcset="">
+        </div>
+        <div class="form">
+            <div class="form-title">
+                <h2 class="title">
+                    Registrarse
+                </h2>
+                <p class="eslogan">
+                    El poder de las imágenes para contar historias.
+                </p>
+            </div>
+            <div class="form-inputs">
+
+                {{ form_start(registrationForm, {'attr': {'class': 'form'}}) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword) }}
+                    <button type="submit" class="submit">Registrarse</button>
+                {{ form_end(registrationForm) }}
+            </div>
+            <div class="separador"></div>
+            <div class="singIn">
+                <p>¿Ya tienes una cuenta?
+                    <a class="link-singIn" href="{{path('app_login')}}">Iniciar Sesión</a>
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="copyright-text">© 2023 LevelMax-Gallery</p>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block footer %} {% endblock %}

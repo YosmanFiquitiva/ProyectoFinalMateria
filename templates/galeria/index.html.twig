@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LevelMaxGallery{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+{% endblock %}
+
+{% block body %}
+<main class="galeria" data-masonry='{ "itemSelector": ".cards", "columnWidth": 300, "gutter": 10, "horizontalOrder": true}'>
+    {% if images != [] %}
+        {% for info in images %}
+        <a href="{{path('app_galeriaOptions', { 'id': info.id })}}">
+            <div class="cards">
+                <img src="{{asset('uploads/'~info.imagen)}}" class="card-img" alt="...">
+                <p class="cards-title">{{info.titulo}}</p>
+            </div>
+        </a>
+        {% endfor %}
+    {% endif %}
+</main>
+{% endblock %}
+
+

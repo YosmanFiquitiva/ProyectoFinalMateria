@@ -1,0 +1,92 @@
+.navbar{
+    background-color: black;
+    margin: 0px;
+}
+.nav-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.offcanvas-body{
+
+    .item-list{
+        padding: 10px;
+        .item{
+            text-decoration: none;
+            color: #151515;
+        }
+    }
+
+    .left:hover{
+        transition: 0.3s;
+        transform: translateX(10px);
+    }
+
+    .right{
+        text-align: end;
+    }
+
+    .right:hover{
+        transition: 0.3s;
+        transform: translateX(-10px);
+    }
+}
+
+.galeria{
+    background-color: whitesmoke;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px;
+
+    a .cards{
+        position: relative;
+        border-radius: 16px;
+        margin-bottom: 10px;
+        max-width: 300px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+        img{
+            border-radius: 16px;
+        }
+
+        .cards-title{
+            position: absolute;
+            height: 30px;
+            width: 100%;
+            background-color: #7f7f7f6e;
+            color: aliceblue;
+            text-align: center;
+            top: 50%;
+        }
+    }
+
+    .cards:hover{
+        transition: all 0.6s;
+        transform: translate(0px, -10px);
+        box-shadow: 0px 20px 17px 2px rgba(0,0,0,0.75);
+    }
+}
+
+
+.footer{
+    height: 131px;
+    width: 100%;
+    background: #151515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    .item-red{
+        color: white;
+        svg{
+            font-size: 30px;
+        }
+    }
+}

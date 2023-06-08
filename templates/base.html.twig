@@ -14,6 +14,80 @@
         {% endblock %}
     </head>
     <body>
+        {% block header %}
+            <header>
+                <section class="encabezado">
+                    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+                        <div class="container-fluid nav-flex">
+                            <a class="navbar-brand" href="#offcanvasMenu" data-bs-toggle="offcanvas" aria-controls="offcanvasMenu">
+                                <i class="fa-solid fa-bars"></i>
+                                Menu
+                            </a>
+                            <a href="{{ path('app_galeria') }}">
+                                <img src="{{asset('images/logo.png')}}" alt="logo">
+                            </a>
+                            <a class="navbar-brand" href="#offcanvasUsuario" data-bs-toggle="offcanvas" aria-controls="offcanvasUsuario">
+                                {{ app.user.userIdentifier }}
+                                <i class="fa-solid fa-circle-user"></i>
+                            </a>
+                        </div>
+                    </nav>
+                </section>
+            </header>
+            <aside>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="item-list left">
+                            <a href="{{ path('app_galeria') }}" class="item">
+                                <i class="fa-solid fa-image"></i>
+                                GALERIA
+                            </a>
+                        </div>
+                        <div class="item-list left">
+                            <a href="{{ path('app_galeriaNew') }}" class="item">
+                                <i class="fa-solid fa-plus"></i>
+                                AÑADIR IMAGEN
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUsuario" aria-labelledby="offcanvasUsuarioLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasUsuarioLabel">Usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="item-list right">
+                            <a href="{{ path('app_galeria') }}" class="item">
+                                PERFIL
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </div>
+                        <div class="item-list right">
+                            <a href="{{ path('app_logout') }}" class="item">
+                                CERRAR SESIÓN
+                                <i class="fa-solid fa-power-off"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        {% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}
+            <footer>
+                <div class="footer">
+                    <a href="" class="item-red"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="" class="item-red"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" class="item-red"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="" class="item-red"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </footer>
+        {% endblock %}
     </body>
 </html>
